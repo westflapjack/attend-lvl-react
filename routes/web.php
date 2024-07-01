@@ -14,9 +14,23 @@ Route::get('/', function () {
     ]);
 });
 
+
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return Inertia::render('Dashboard', [
+        'canLogin'    => Route::has('login'),
+        'canRegister' => Route::has('register')
+    ]);
+})
+//     ->middleware(['auth', 'verified'])
+     ->name('dashboard');
+
+
+Route::get('/classrooms', function () {
+    return Inertia::render('Classrooms');
+})
+//    ->middleware(['auth', 'verified'])
+     ->name('classrooms');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

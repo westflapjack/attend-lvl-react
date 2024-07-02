@@ -34,3 +34,15 @@ Add npm scripts to package.json for compiling SASS
     "sass:watch": "node-sass resources/sass/main.scss public/style.css -w"
 }
 ```
+
+Generate the Classroom model and all other associated classes:
+
+```php
+php artisan make:model -a Classroom
+```
+
+- Edit the migration
+- Run the migration `php artisan migrate`
+- Define the Classroom seeding in `ClassroomFactory::definition()`
+- Update `DatabaseSeeder::run()` to include the Classroom seeding
+- 

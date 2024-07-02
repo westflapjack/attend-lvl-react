@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -25,10 +26,8 @@ Route::get('/dashboard', function () {
      ->name('dashboard');
 
 
-Route::get('/classrooms', function () {
-    return Inertia::render('Classrooms');
-})
-//    ->middleware(['auth', 'verified'])
+Route::get('/classrooms', [ClassroomController::class, 'index'])
+     ->middleware(['auth', 'verified'])
      ->name('classrooms');
 
 

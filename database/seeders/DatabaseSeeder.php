@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Classroom;
 use App\Models\User;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -20,5 +21,7 @@ class DatabaseSeeder extends Seeder
             'name'  => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        Classroom::factory(4)->create();
     }
 }

@@ -1,4 +1,5 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import {Link} from "@inertiajs/react";
 import {Head} from '@inertiajs/react';
 
 const Classrooms = ({auth, classrooms}) => {
@@ -14,7 +15,11 @@ const Classrooms = ({auth, classrooms}) => {
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="content">
                             <ul>
-                                {classrooms.map((classroom) => (<li>{classroom.label}</li>))}
+                                {classrooms.map((classroom) => {
+                                    return (
+                                        <Classroom classroom={classroom} key={classroom.id}/>
+                                    );
+                                })}
                             </ul>
                         </div>
                     </div>
@@ -23,5 +28,15 @@ const Classrooms = ({auth, classrooms}) => {
         </AuthenticatedLayout>
     );
 };
+
+const Classroom = ({classroom}) => {
+    return (
+        <li>
+            <Link href={`/classrooms/${classroom.id}`}>
+                {classroom.id}) {classroom.label}
+            </Link>
+        </li>
+    );
+}
 
 export default Classrooms;

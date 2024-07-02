@@ -45,4 +45,9 @@ php artisan make:model -a Classroom
 - Run the migration `php artisan migrate`
 - Define the Classroom seeding in `ClassroomFactory::definition()`
 - Update `DatabaseSeeder::run()` to include the Classroom seeding
-- 
+
+Import Material Design components
+
+```shell
+npm install @mui/material @emotion/react @emotion/styled
+```

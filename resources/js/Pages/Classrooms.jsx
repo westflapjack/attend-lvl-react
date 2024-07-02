@@ -1,6 +1,7 @@
+import * as React from 'react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import {Link} from "@inertiajs/react";
 import {Head} from '@inertiajs/react';
+import ClassroomsTable from "@/Components/ClassroomsTable.jsx";
 
 const Classrooms = ({auth, classrooms}) => {
     return (
@@ -14,13 +15,7 @@ const Classrooms = ({auth, classrooms}) => {
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="content">
-                            <ul>
-                                {classrooms.map((classroom) => {
-                                    return (
-                                        <Classroom classroom={classroom} key={classroom.id}/>
-                                    );
-                                })}
-                            </ul>
+                            <ClassroomsTable classrooms={classrooms}/>
                         </div>
                     </div>
                 </div>
@@ -28,15 +23,4 @@ const Classrooms = ({auth, classrooms}) => {
         </AuthenticatedLayout>
     );
 };
-
-const Classroom = ({classroom}) => {
-    return (
-        <li>
-            <Link href={`/classrooms/${classroom.id}`}>
-                {classroom.id}) {classroom.label}
-            </Link>
-        </li>
-    );
-}
-
 export default Classrooms;

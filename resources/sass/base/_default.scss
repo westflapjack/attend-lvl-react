@@ -3,10 +3,11 @@ html {
 }
 
 body {
-    max-width: 75em;
-    margin: 0 auto;
-    background-color: #e3e3e3FF;
+    margin: 0 auto !important; // Overriding tailwind
     min-height: 100vh;
+    max-width: 75em;
+
+    background-color: #e3e3e3FF;
 
     @include respond('tab-land') {
         background-color: #e3e3d3FF;

@@ -1,17 +1,14 @@
 nav.navbar {
     margin: 0 auto;
-    border: 1px solid #222;
+    border-bottom-width: 1px; //border-b
+    border-color: rgb(243, 244, 246); // border-gray-100
 
-    background-color: lightskyblue;
+
+    background-color: rgb(255, 255, 255); // bg-white
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-
-    & > * {
-        border: 1px solid orangered;
-    }
 
 
     // Logo and page links

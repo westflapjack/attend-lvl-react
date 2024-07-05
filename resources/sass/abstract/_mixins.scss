@@ -39,3 +39,9 @@ which need to be arranged in DECREASING max-width
         }; //1800px
     }
 }
+
+@mixin clearfix {
+    content: "";
+    clear: both;
+    display: table;
+}

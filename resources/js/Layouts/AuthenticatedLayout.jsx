@@ -9,7 +9,7 @@ export default function Authenticated({user, header, children}) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100">
+        <div className="authenticated-layout">
             <nav className="navbar">
                 <div className="nav-menu">
                     <div className="logo-menu">

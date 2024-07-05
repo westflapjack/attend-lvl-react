@@ -3,12 +3,28 @@ html {
 }
 
 body {
-    max-width: 128rem;
+    max-width: 75em;
     margin: 0 auto;
     background-color: #e3e3e3FF;
     min-height: 100vh;
+
+    @include respond('tab-land') {
+        background-color: #e3e3d3FF;
+    }
+
+    @include respond('tab-port') {
+        background-color: #e3e3c3FF;
+    }
+
+    @include respond('phone') {
+        background-color: #e3e3b3FF;
+    }
 }
 
 a {
     text-decoration: none;
+}
+
+.hidden {
+    display: none;
 }

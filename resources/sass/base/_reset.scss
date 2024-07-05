@@ -15,6 +15,10 @@
     box-sizing: inherit;
 }
 
+body {
+    box-sizing: border-box; /* Include padding and border in specified height and width on block-level elements */
+}
+
 /* The "clearfix" should class should be defined on the element that CONTAINS the floated element,
    not on the floated element itself
  */
@@ -22,8 +26,4 @@
     content: "";
     clear: both;
     display: table;
-}
-
-body {
-    box-sizing: border-box; /* Include padding and border in specified height and width on block-level elements */
 }

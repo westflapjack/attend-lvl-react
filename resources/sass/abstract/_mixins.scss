@@ -45,3 +45,10 @@ which need to be arranged in DECREASING max-width
     clear: both;
     display: table;
 }
+
+@mixin centerAll {
+    position: absolute; /* parent must also be positioned */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

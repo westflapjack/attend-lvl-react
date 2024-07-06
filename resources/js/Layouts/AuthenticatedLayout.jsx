@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import NavLink from '@/Components/NavLink';
+import {Link} from "@inertiajs/react";
 
 export default function Authenticated({user, header, children}) {
 
@@ -19,6 +20,9 @@ export default function Authenticated({user, header, children}) {
                         <NavLink href={route('classrooms')} active={route().current('classrooms')}>
                             Classrooms
                         </NavLink>
+                    </div>
+                    <div className="profile-menu">
+                        <Link href="/logout" method="post">Logout</Link>
                     </div>
                 </nav>
             </header>

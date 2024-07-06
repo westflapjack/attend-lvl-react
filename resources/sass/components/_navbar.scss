@@ -20,33 +20,34 @@ nav.navbar {
 
         div.nav-links {
         }
+    }
 
-        a {
-            display: inline-block;
-            font-size: 125%;
-            padding: 0 2rem;
-            width: 15rem;
+    a {
+        display: inline-block;
+        font-size: 125%;
+        padding: 0 2rem;
+        width: 20rem;
+        text-align: center;
 
-            &:link,
-            &:visited {
-                color: var(--click-me-text);
-            }
+        &:link,
+        &:visited {
+            color: var(--click-me-text);
+        }
 
-            &:hover {
-                color: var(--navbar-background);
-                background-color: var(--click-me-text);
-            }
+        &:hover {
+            color: var(--navbar-background);
+            background-color: var(--click-me-text);
+        }
 
-            &:active {
-                color: purple;
-            }
+        &:active {
+            color: purple;
+        }
 
-            &.current {
-                border-bottom: 3px solid purple;
-
-            }
+        &.current {
+            border-bottom: 3px solid purple;
 
         }
+
     }
 
 

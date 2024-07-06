@@ -35,9 +35,13 @@ Add npm scripts to package.json for compiling SASS
 }
 ```
 
+___
+
+## Classrooms
+
 Generate the Classroom model and all other associated classes:
 
-```php
+```shell
 php artisan make:model -a Classroom
 ```
 
@@ -46,8 +50,34 @@ php artisan make:model -a Classroom
 - Define the Classroom seeding in `ClassroomFactory::definition()`
 - Update `DatabaseSeeder::run()` to include the Classroom seeding
 
-Import Material Design components
+___
+
+**Import Material Design components**
 
 ```shell
 npm install @mui/material @emotion/react @emotion/styled
+```
+
+(This may have been a mistake, as it seems to style with Tailwind, which is not what I want.)
+___
+
+## Students
+
+Generate the Students model and all other associated classes:
+
+```shell
+php artisan make:model -a Student
+```
+
+- Edit the migration
+- Run the migration `php artisan migrate`
+- Define the Student seeding in `StudentFactory::definition()`
+- Update `DatabaseSeeder::run()` to include the Classroom seeding
+- Write the Students JSX page component
+- Update `StudentsController::index()`
+- Add the route for '/students'
+- migrate and seed
+
+```shell
+php artisan migrate:fresh --seed
 ```

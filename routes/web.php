@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -22,7 +23,7 @@ Route::get('/dashboard', function () {
         'canRegister' => Route::has('register')
     ]);
 })
-//     ->middleware(['auth', 'verified'])
+     ->middleware(['auth', 'verified'])
      ->name('dashboard');
 
 
@@ -30,6 +31,9 @@ Route::get('/classrooms', [ClassroomController::class, 'index'])
      ->middleware(['auth', 'verified'])
      ->name('classrooms');
 
+Route::get('/students', [StudentController::class, 'index'])
+     ->middleware(['auth', 'verified'])
+     ->name('students');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

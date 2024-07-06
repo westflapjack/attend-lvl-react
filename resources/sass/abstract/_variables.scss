@@ -4,10 +4,16 @@
     --neutral: #c0c0c0;
     --dark-neutral: #a0a0a0;
 
+    // Static, non-interactive text
     --light-text: #606060;
     --medium-text: #404040;
     --dark-text: #202020;
 
+    // Text color for interactive items
+    --click-me-text: purple;
+
+
+    --navbar-background: white;
 
     @media (prefers-color-scheme: dark) {
         // Palette

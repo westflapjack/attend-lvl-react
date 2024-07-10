@@ -1,42 +1,39 @@
-import * as React from "react";
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-
+import {useState} from "react";
 
 const ClassroomsTable = ({classrooms}) => {
+    const [selectedRow, setSelectedRow] = useState(null);
+    const handleRowClicked              = (i) => {
+        setSelectedRow(i);
+    }
     return (
-        <TableContainer component={Paper}>
-            <Table>
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Label</TableCell>
-                        <TableCell>Order</TableCell>
-                        <TableCell>Created By</TableCell>
-                        <TableCell>Created At</TableCell>
-                        <TableCell>Updated By</TableCell>
-                        <TableCell>Updated At</TableCell>
-                    </TableRow>
-                </TableHead>
-
-                <TableBody>
-                    {classrooms.map((classroom) => (
-                        <TableRow key={classroom.id}>
-                            <TableCell>{classroom.label}</TableCell>
-                            <TableCell>{classroom.order}</TableCell>
-                            <TableCell>{classroom.created_by}</TableCell>
-                            <TableCell>{classroom.created_at}</TableCell>
-                            <TableCell>{classroom.updated_by}</TableCell>
-                            <TableCell>{classroom.updated_at}</TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+        <table className="classroomsTable">
+            <thead>
+                <tr>
+                    <th>Label</th>
+                    <th>Order</th>
+                    <th>Created By</th>
+                    <th>Created At</th>
+                    <th>Updated By</th>
+                    <th>Updated At</th>
+                </tr>
+            </thead>
+            <tbody>
+            {classrooms.map((classroom, i) => (
+                <tr
+                    key={classroom.id}
+                    className={selectedRow === i ? 'selected' : ''}
+                    onClick={() => handleRowClicked(i)}>
+                    <td>{classroom.label}</td>
+                    <td>{classroom.order}</td>
+                    <td>{classroom.created_by}</td>
+                    <td>{classroom.created_at}</td>
+                    <td>{classroom.updated_by}</td>
+                    <td>{classroom.updated_at}</td>
+                </tr>
+            ))}
+            </tbody>
+            <tfoot/>
+        </table>
     );
 };
 

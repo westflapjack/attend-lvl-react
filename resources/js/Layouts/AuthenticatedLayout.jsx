@@ -22,7 +22,7 @@ export default function Authenticated({user, header, children}) {
                         </NavLink>
                     </div>
                     <div className="profile-menu">
-                        <Link href="/logout" method="post">Logout</Link>
+                        <Link href="/logout" method="post" as="button">Logout</Link>
                     </div>
                 </nav>
             </header>

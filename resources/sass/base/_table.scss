@@ -1,0 +1,22 @@
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    font-size: 85%;
+}
+
+tr {
+    border: 1px solid black;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: .25rem .5rem;
+}
+
+tbody tr.selected {
+    background: #bb94e1;
+}
+
+tbody tr:hover {
+    background-color: #9c69ce;
+}

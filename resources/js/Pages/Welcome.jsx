@@ -1,4 +1,5 @@
 import {Link, Head} from '@inertiajs/react';
+import Guest from "@/Layouts/GuestLayout.jsx";
 
 export default function Welcome({auth, laravelVersion, phpVersion}) {
     const handleImageError = () => {
@@ -9,10 +10,10 @@ export default function Welcome({auth, laravelVersion, phpVersion}) {
     };
 
     return (
-        <>
-            <Head title="Welcome"/>
+        <Guest>
+            <Head title="Attend | Welcome"/>
             <h1>Welcome</h1>
             <Link href="/login">Login</Link>
-        </>
+        </Guest>
     );
 }

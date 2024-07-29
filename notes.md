@@ -17,6 +17,14 @@ php artisan migrate:fresh --seed
 Seeding creates, among other things, the "users" table and a single user with a username of "test@example.com"
 and a password of "password".
 
+## Development
+
+```shell
+npm run sass:watch
+npm run dev
+php artisan serve
+```
+
 ## Styling
 
 Let's start getting rid of Tailwind:
